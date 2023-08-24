@@ -1,8 +1,8 @@
-package ticTacToe;
+ package ticTacToe;
 
 import java.awt.*;
 
-public class Board {
+public class Board extends GameMain {
 	// grid line width
 	public static final int GRID_WIDTH = 8;
 	// grid line half width
@@ -15,7 +15,8 @@ public class Board {
 	public Board() {
 		
 	 //TODO: initialise the cells array using ROWS and COLS constants 
-
+		// ** Initialised cells array with ROWS and COLS constants **
+		cells [ROWS] [COLS] = new Cell (ROWS, COLS);
 		
 		for (int row = 0; row < GameMain.ROWS; ++row) {
 			for (int col = 0; col < GameMain.COLS; ++col) {
