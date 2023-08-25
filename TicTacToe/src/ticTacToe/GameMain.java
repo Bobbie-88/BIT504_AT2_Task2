@@ -1,7 +1,6 @@
 package ticTacToe;
 
 import java.awt.*;
-import javax.swing.JFrame;
 import java.awt.event.*;
 import javax.swing.*;
 
@@ -67,10 +66,6 @@ public class GameMain extends JPanel implements MouseListener{
         add(new Board());
 	}
 	
-	private static void setDefaultCloseOperation(int exitOnClose) {
-		// TODO Auto-generated method stub
-		
-	}
 
 	public static void main(String[] args) {
 		    // Run GUI code in Event Dispatch thread for thread safety.
@@ -84,7 +79,7 @@ public class GameMain extends JPanel implements MouseListener{
 				new GameMain();
 				
 				//TODO: set the default close operation of the frame to exit_on_close
-				// ** UnComment the Below when rest of Main is completed
+				// ** Completed(?) 
 		    	setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 				
@@ -219,6 +214,9 @@ public class GameMain extends JPanel implements MouseListener{
 	public void mouseExited(MouseEvent e) {
 		// Auto-generated, event not used
 		
+	}
+	// Set Default Close Operation Method
+	private static void setDefaultCloseOperation(int exitOnClose) {		
 	}
 
 }
