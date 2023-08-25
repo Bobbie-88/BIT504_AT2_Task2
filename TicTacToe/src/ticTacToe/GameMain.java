@@ -1,6 +1,7 @@
 package ticTacToe;
 
 import java.awt.*;
+import javax.swing.JFrame;
 import java.awt.event.*;
 import javax.swing.*;
 
@@ -28,6 +29,7 @@ public class GameMain extends JPanel implements MouseListener{
 	 	 
 	//TODO: create the enumeration for the variable below (GameState currentState)
 	//HINT all of the states you require are shown in the code within GameMain
+	// ** Completed **
 	private GameState currentState; 
 	
 	// the current player
@@ -57,10 +59,12 @@ public class GameMain extends JPanel implements MouseListener{
 		
 		
 		// TODO: Create a new instance of the game "Board"class. HINT check the variables above for the correct name
-
+        // ** Completed(?) **
+		Board board = new Board() ;
 		
 		//TODO: call the method to initialise the game board
-
+        // ** Completed(?) **
+        add(new Board());
 	}
 	
 	public static void main(String[] args) {
@@ -75,7 +79,9 @@ public class GameMain extends JPanel implements MouseListener{
 				
 				
 				//TODO: set the default close operation of the frame to exit_on_close
-		            
+				// ** UnComment the Below when rest of Main is completed
+		    	//setDefaultCloseOperation(EXIT_ON_CLOSE);
+
 				
 				frame.pack();             
 				frame.setLocationRelativeTo(null);

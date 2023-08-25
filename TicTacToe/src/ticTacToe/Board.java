@@ -15,7 +15,7 @@ public class Board extends GameMain {
 	public Board() {
 		
 	 //TODO: initialise the cells array using ROWS and COLS constants 
-		// ** I Initialised cells array with ROWS and COLS constants **
+		// ** Completed(?) Initialised cells array with ROWS and COLS constants **
 		cells [ROWS] [COLS] = new Cell (ROWS, COLS);
 		
 		for (int row = 0; row < GameMain.ROWS; ++row) {
