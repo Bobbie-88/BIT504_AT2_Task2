@@ -15,13 +15,13 @@ public class Cell {
 	public Cell(int row, int col) {
 		
 		// TODO: Initialise the variables row, col 
-		// ** Completed **
+		// ** Completed - Initialised the variables in Attributes with the variables in the constructor using 'this.' 
         this.row = row;
         this.col = col;
 		
 		
 		//TODO: call the method that sets the cell content to EMPTY
-		// ** Completed
+		// ** Completed - Call Clear() Method
 		clear();
 	}
 	
@@ -51,7 +51,7 @@ public class Cell {
 	public void clear() {
 		
 		// TODO: Set the value of content to Empty (Remember this is an enum)
-		// ** Completed **
+		// ** Completed - Set content variable of Player enum to Empty
         content = Player.Empty;
 		
 	}
