@@ -69,7 +69,7 @@ public class Board  {
 		 
 		
 		// TODO: Check the diagonal in the other direction
-		// ** Completed 
+		// ** Completed - Changed row array indexes to the opposite of '3-in-the-diagonal' If statement above
 		if( cells[2][0].content == thePlayer && cells[1][1].content == thePlayer && cells[0][2].content == thePlayer)
 			return true;
 

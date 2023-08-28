@@ -28,7 +28,7 @@ public class GameMain extends JPanel implements MouseListener{
 	 	 
 	//TODO: create the enumeration for the variable below (GameState currentState)
 	//HINT all of the states you require are shown in the code within GameMain
-	// ** Completed **
+	// ** Completed - Created GameState Enum with 4 game states (Playing, Draw, 'O's Win, 'X's Win **
 	private GameState currentState; 
 	
 	// the current player
@@ -40,7 +40,8 @@ public class GameMain extends JPanel implements MouseListener{
 	/** Constructor to setup the UI and game components on the panel */
 	public GameMain() {   
 		
-		// TODO: This JPanel fires a MouseEvent on MouseClicked so add required event listener to 'this'.          
+		// TODO: This JPanel fires a MouseEvent on MouseClicked so add required event listener to 'this'. 
+		// ** Completed - Added the Mouse Listener using 'this' keyword
 		addMouseListener(this);
 	    
 		// Setup the status bar (JLabel) to display status message       
@@ -58,12 +59,11 @@ public class GameMain extends JPanel implements MouseListener{
 		
 
 		// TODO: Create a new instance of the game "Board"class. HINT check the variables above for the correct name
-		// ** Completed
+		// ** Completed - new Board() object
 		board = new Board();
 		
 		//TODO: call the method to initialise the game board
-		//** Completed 
-        //new Board();
+		//** Completed - Call initGame() Method
         initGame();
 	}
 	
@@ -76,13 +76,13 @@ public class GameMain extends JPanel implements MouseListener{
 				JFrame frame = new JFrame(TITLE);
 				
 				//TODO: create the new GameMain panel and add it to the frame
-				// ** Completed - CReate new GameMain Panel		
+				// ** Completed - Created new GameMain Panel		
 				JPanel GameMain = new JPanel();
 				// Add to the Frame 
 				frame.add(new GameMain());
 				
 				//TODO: set the default close operation of the frame to exit_on_close
-				// ** Completed(?) 
+				// ** Completed - Used Exit_On-Close int function of JFrame
 		    	setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 				
@@ -105,13 +105,13 @@ public class GameMain extends JPanel implements MouseListener{
 			if (currentPlayer == Player.Cross) {   
 			
 				//TODO: use the status bar to display the message "X"'s Turn
-				//** Completed
+				//** Completed - Used setText function to display message on Status Bar
 				statusBar.setText("X's Turn.");
 				
 			} else {    
 				
 				//TODO: use the status bar to display the message "O"'s Turn
-				//** Completed
+				//** Completed - Same method as 'X's Turn
 				statusBar.setText("O's Turn.");
 
 				
@@ -152,7 +152,7 @@ public class GameMain extends JPanel implements MouseListener{
 			if(board.hasWon(thePlayer, row, col)) {
 				
 				// TODO: check which player has won and update the currentstate to the appropriate gamestate for the winner
-				//** Completed(?)
+				//** Completed- Used If statements to check the hasWon method for the winner. Use GameState enum to update the currentState with the correct winner
 				if (board.hasWon(Player.Cross, row, col)) {
 					currentState = GameState.Cross_won;
 				}
@@ -165,7 +165,7 @@ public class GameMain extends JPanel implements MouseListener{
 				if (board.isDraw ()) {
 					
 				// TODO: set the currentstate to the draw gamestate
-					// ** Completed
+					// ** Completed - Use GameState Enum to set currentState to Draw
 					currentState = GameState.Draw;
 
 			}
@@ -205,32 +205,32 @@ public class GameMain extends JPanel implements MouseListener{
 		}   
 		
 		//TODO: redraw the graphics on the UI  
-		//**Completed(?)
-		     //update(null);
+		//**Completed - Call on repaint() Method
 		     repaint();
 	}	
 	
-	//@Override
+	 // @Override
 	public void mousePressed(MouseEvent e) {
 		//  Auto-generated, event not used
 		
 	}
-	//@Override
+	 //@Override
 	public void mouseReleased(MouseEvent e) {
 		//  Auto-generated, event not used
 		
 	}
-	//@Override
+	 //@Override
 	public void mouseEntered(MouseEvent e) {
 		// Auto-generated,event not used
 		
 	}
-	//@Override
+	 //@Override
 	public void mouseExited(MouseEvent e) {
 		// Auto-generated, event not used
 		
 	}
 	// Set Default Close Operation Method
+	 // ** Used to set EXIT_ON_CLOSE int
 	private static void setDefaultCloseOperation(int exitOnClose) {		
 	}
 
