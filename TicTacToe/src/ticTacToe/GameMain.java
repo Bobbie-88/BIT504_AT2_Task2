@@ -41,7 +41,7 @@ public class GameMain extends JPanel implements MouseListener{
 	public GameMain() {   
 		
 		// TODO: This JPanel fires a MouseEvent on MouseClicked so add required event listener to 'this'.          
-	    
+		addMouseListener(this);
 	    
 		// Setup the status bar (JLabel) to display status message       
 		statusBar = new JLabel("         ");       
@@ -63,7 +63,8 @@ public class GameMain extends JPanel implements MouseListener{
 		
 		//TODO: call the method to initialise the game board
 		//** Completed 
-        new Board();
+        //new Board();
+        initGame();
 	}
 	
 
@@ -75,8 +76,10 @@ public class GameMain extends JPanel implements MouseListener{
 				JFrame frame = new JFrame(TITLE);
 				
 				//TODO: create the new GameMain panel and add it to the frame
-				// ** Completed(?) **		
-				new GameMain();
+				// ** Completed - CReate new GameMain Panel		
+				JPanel GameMain = new JPanel();
+				// Add to the Frame 
+				frame.add(new GameMain());
 				
 				//TODO: set the default close operation of the frame to exit_on_close
 				// ** Completed(?) 
@@ -96,7 +99,6 @@ public class GameMain extends JPanel implements MouseListener{
 		setBackground(Color.WHITE);
 		//ask the game board to paint itself
 		board.paint(g);
-		
 		//set status bar message
 		if (currentState == GameState.Playing) {          
 			statusBar.setForeground(Color.BLACK);          
@@ -202,27 +204,28 @@ public class GameMain extends JPanel implements MouseListener{
 			initGame();            
 		}   
 		
-		//TODO: redraw the graphics on the UI          
-           
-	}
-		
+		//TODO: redraw the graphics on the UI  
+		//**Completed(?)
+		     //update(null);
+		     repaint();
+	}	
 	
-	@Override
+	//@Override
 	public void mousePressed(MouseEvent e) {
 		//  Auto-generated, event not used
 		
 	}
-	@Override
+	//@Override
 	public void mouseReleased(MouseEvent e) {
 		//  Auto-generated, event not used
 		
 	}
-	@Override
+	//@Override
 	public void mouseEntered(MouseEvent e) {
 		// Auto-generated,event not used
 		
 	}
-	@Override
+	//@Override
 	public void mouseExited(MouseEvent e) {
 		// Auto-generated, event not used
 		
