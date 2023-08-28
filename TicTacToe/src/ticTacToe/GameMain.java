@@ -1,7 +1,6 @@
 package ticTacToe;
 
 import java.awt.*;
-import javax.swing.JFrame;
 import java.awt.event.*;
 import javax.swing.*;
 
@@ -22,7 +21,7 @@ public class GameMain extends JPanel implements MouseListener{
 	public static final int CELL_PADDING = CELL_SIZE / 6;    
 	public static final int SYMBOL_SIZE = CELL_SIZE - CELL_PADDING * 2;    
 	public static final int SYMBOL_STROKE_WIDTH = 8;
-	
+
 	/*declare game object variables*/
 	// the game board 
 	private Board board;
@@ -36,7 +35,7 @@ public class GameMain extends JPanel implements MouseListener{
 	private Player currentPlayer; 
 	// for displaying game status message
 	private JLabel statusBar;       
-	
+
 
 	/** Constructor to setup the UI and game components on the panel */
 	public GameMain() {   
@@ -57,16 +56,17 @@ public class GameMain extends JPanel implements MouseListener{
 		// account for statusBar height in overall height
 		setPreferredSize(new Dimension(CANVAS_WIDTH, CANVAS_HEIGHT + 30));
 		
-		
+
 		// TODO: Create a new instance of the game "Board"class. HINT check the variables above for the correct name
-        // ** Completed(?) **
-		Board board = new Board() ;
+		// ** Completed
+		board = new Board();
 		
 		//TODO: call the method to initialise the game board
-        // ** Completed(?) **
-        add(new Board());
+		//** Completed 
+        new Board();
 	}
 	
+
 	public static void main(String[] args) {
 		    // Run GUI code in Event Dispatch thread for thread safety.
 		javax.swing.SwingUtilities.invokeLater(new Runnable() {
@@ -75,12 +75,12 @@ public class GameMain extends JPanel implements MouseListener{
 				JFrame frame = new JFrame(TITLE);
 				
 				//TODO: create the new GameMain panel and add it to the frame
-						
-				
+				// ** Completed(?) **		
+				new GameMain();
 				
 				//TODO: set the default close operation of the frame to exit_on_close
-				// ** UnComment the Below when rest of Main is completed
-		    	//setDefaultCloseOperation(EXIT_ON_CLOSE);
+				// ** Completed(?) 
+		    	setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 				
 				frame.pack();             
@@ -214,6 +214,9 @@ public class GameMain extends JPanel implements MouseListener{
 	public void mouseExited(MouseEvent e) {
 		// Auto-generated, event not used
 		
+	}
+	// Set Default Close Operation Method
+	private static void setDefaultCloseOperation(int exitOnClose) {		
 	}
 
 }

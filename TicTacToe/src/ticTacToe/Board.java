@@ -2,7 +2,7 @@
 
 import java.awt.*;
 
-public class Board extends GameMain {
+public class Board  {
 	// grid line width
 	public static final int GRID_WIDTH = 8;
 	// grid line half width
@@ -15,8 +15,8 @@ public class Board extends GameMain {
 	public Board() {
 		
 	 //TODO: initialise the cells array using ROWS and COLS constants 
-		// ** Completed(?) Initialised cells array with ROWS and COLS constants **
-		cells [ROWS] [COLS] = new Cell (ROWS, COLS);
+		// ** Completed, Initialised cells array with ROWS and COLS constants **
+		cells = new Cell[GameMain.ROWS] [GameMain.COLS];
 		
 		for (int row = 0; row < GameMain.ROWS; ++row) {
 			for (int col = 0; col < GameMain.COLS; ++col) {
@@ -26,13 +26,25 @@ public class Board extends GameMain {
 	}
 	
 
+
 	 /** Return true if it is a draw (i.e., no more EMPTY cells) */ 
-	public boolean isDraw() {
+      	public boolean isDraw() {
+		
 		 
 		// TODO: Check whether the game has ended in a draw. 
 		// Hint: Use a nested loop (see the constructor for an example). Check whether any of the cells content in the board grid are Player.Empty. If they are, it is not a draw.
 		// Hint: Return false if it is not a draw, return true if there are no empty positions left
-		   
+      		// ** Completed, used two for loops with a nested If Statement to check the grid for empty cells- if there are empty cells isDraw is false **
+      		boolean draw = true;
+      		
+      		for (int row = 0; row < GameMain.ROWS; ++row) {
+    			for (int col = 0; col < GameMain.COLS; ++col) {
+    				if(cells[row][col].content == Player.Empty) {
+    					draw = false;
+    				}
+    			}
+      		}
+    			return draw;
 		
 
 		
@@ -46,7 +58,9 @@ public class Board extends GameMain {
 		
 		 // TODO: Check if the player has 3 in the playerCol.
 		 // Hint: Use the row code above as a starting point, remember that it goes cells[row][column] 
-		
+		// ** Completed, used the PlayerCol variable in the [cells] array
+		if(cells[0][playerCol].content == thePlayer && cells[1][playerCol].content == thePlayer && cells[2][playerCol].content == thePlayer )
+			return true; 
 		
 		
 		 // 3-in-the-diagonal
@@ -55,7 +69,9 @@ public class Board extends GameMain {
 		 
 		
 		// TODO: Check the diagonal in the other direction
-		
+		// ** Completed 
+		if( cells[0][2].content == thePlayer && cells[1][1].content == thePlayer && cells[2][0].content == thePlayer)
+			return true;
 
 		
 		//no winner, keep playing
